@@ -24,7 +24,7 @@ function convertToWav(inputPath, outputPath) {
 
 // Api
 const openai = new OpenAI({
-  apiKey: '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',
+  apiKey: 'holas_AQUI PON LA API',
 });
 
 app.use(cors());

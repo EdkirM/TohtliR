@@ -16,7 +16,7 @@ export default function HomeScreen() {
   const [transcript, setTranscript] = useState('');
   const [hasPermission, setHasPermission] = useState(false);
 
-  // ⚙️ Opciones de grabación en formato .m4a
+  // Opciones de grabación en formato .m4a
   const recordingOptions = {
     android: {
       extension: '.m4a',
