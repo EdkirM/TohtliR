@@ -93,7 +93,7 @@ export default function HomeScreen() {
     // });
 
     try {
-      const response = await fetch('http://192.168.23.99:3000/transcribe', {
+      const response = await fetch('http://192.168.1.72:3000/transcribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'multipart/form-data',

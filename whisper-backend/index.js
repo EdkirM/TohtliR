@@ -95,3 +95,19 @@ if (!fs.existsSync('audios')) {
 app.listen(port, () => {
   console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
 });
+
+// Ruta para obtener el historial de transcripciones
+app.get('/recordings', (req, res) => {
+  try {
+    const historyFile = path.join(__dirname, 'transcriptions.json');
+    if (!fs.existsSync(historyFile)) {
+      return res.json([]);
+    }
+
+    const history = JSON.parse(fs.readFileSync(historyFile, 'utf-8'));
+    res.json(history);
+  } catch (err) {
+    console.error('Error al leer historial:', err);
+    res.status(500).json({ error: 'Error al obtener historial' });
+  }
+});
