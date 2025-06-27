@@ -18,7 +18,7 @@ export default function RecordScreen() {
 
   const fetchRecordings = async () => {
     try {
-      const response = await fetch('http://192.168.1.72:3000/recordings');
+      const response = await fetch('http://192.168.1.103:3000/recordings');
       const data = await response.json();
       setRecordings(data);
     } catch (error) {

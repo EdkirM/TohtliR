@@ -18,5 +18,157 @@
     "file": "2025-06-24T17-05-49.308Z_recording_1750784747717.m4a",
     "text": "Hello everyone, my name is Ezakir. How are you?",
     "timestamp": "2025-06-24T17:05:49.308Z"
+  },
+  {
+    "file": "2025-06-26T21-26-11.441Z_recording_1750973169171.m4a",
+    "text": "Hola, probando audio 1, 2, 3.",
+    "original": "Hola, probando audio 1, 2, 3.",
+    "translated": false,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T21:26:11.443Z"
+  },
+  {
+    "file": "2025-06-26T21-26-30.892Z_recording_1750973190038.m4a",
+    "text": "Hola, si seguimos probando este audio 1, 2, 3, 4.",
+    "original": "Hola, si seguimos probando este audio 1, 2, 3, 4.",
+    "translated": false,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T21:26:30.892Z"
+  },
+  {
+    "file": "2025-06-26T21-26-51.063Z_recording_1750973208971.m4a",
+    "text": "Hello, how are you? My name is Uriel.",
+    "original": "Hola, ¿cómo estás? Mi nombre es Uriel.",
+    "translated": true,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T21:26:51.063Z"
+  },
+  {
+    "file": "2025-06-26T21-27-06.219Z_recording_1750973223711.m4a",
+    "text": "Hello, how are you? My name is Uriel. I live in Mexico.",
+    "original": "Hola, ¿cómo estás? Mi nombre es Uriel. Vivo en México.",
+    "translated": true,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T21:27:06.219Z"
+  },
+  {
+    "file": "2025-06-26T22-22-43.288Z_recording_1750976561186.m4a",
+    "text": "Hola a todos, ¿cómo están?",
+    "original": "Hola a todos, ¿cómo están?",
+    "translated": false,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T22:22:43.289Z"
+  },
+  {
+    "file": "2025-06-26T22-22-57.840Z_recording_1750976574725.m4a",
+    "text": "Hello everyone, how are you?",
+    "original": "Hola a todos, ¿cómo están?",
+    "translated": true,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T22:22:57.840Z"
+  },
+  {
+    "file": "2025-06-26T22-23-11.077Z_recording_1750976588559.m4a",
+    "text": "Hallo, wie geht es Ihnen?",
+    "original": "Hola, ¿cómo están?",
+    "translated": true,
+    "targetLanguage": "de",
+    "timestamp": "2025-06-26T22:23:11.077Z"
+  },
+  {
+    "file": "2025-06-26T22-23-36.573Z_recording_1750976613475.m4a",
+    "text": "Bonjour, mon nom est Uriel. J'ai 27 ans.",
+    "original": "Hola, mi nombre es Uriel. Tengo 27 años.",
+    "translated": true,
+    "targetLanguage": "fr",
+    "timestamp": "2025-06-26T22:23:36.578Z"
+  },
+  {
+    "file": "2025-06-26T22-26-41.236Z_recording_1750976799364.m4a",
+    "text": "Hola a todos, ¿cómo están?",
+    "original": "Hola a todos, ¿cómo están?",
+    "translated": false,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T22:26:41.236Z"
+  },
+  {
+    "file": "2025-06-26T22-34-23.026Z_recording_1750977259362.m4a",
+    "text": "Hola a todos, ¿cómo están?",
+    "original": "Hola a todos, ¿cómo están?",
+    "translated": false,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T22:34:23.027Z"
+  },
+  {
+    "file": "2025-06-26T22-34-37.197Z_recording_1750977273697.m4a",
+    "text": "Hello everyone, how are you?",
+    "original": "Hola a todos, ¿cómo están?",
+    "translated": true,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T22:34:37.197Z"
+  },
+  {
+    "file": "2025-06-26T22-35-29.605Z_recording_1750977326392.m4a",
+    "text": "Thank you very much.",
+    "original": "Thank you very much.",
+    "translated": false,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T22:35:29.605Z"
+  },
+  {
+    "file": "2025-06-26T22-36-06.327Z_recording_1750977364724.m4a",
+    "text": "Thank you for watching.",
+    "original": "Thank you for watching.",
+    "translated": false,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T22:36:06.328Z"
+  },
+  {
+    "file": "2025-06-26T22-36-37.412Z_recording_1750977394093.m4a",
+    "text": "Hola a todos",
+    "original": "Hello everyone",
+    "translated": true,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-26T22:36:37.413Z"
+  },
+  {
+    "file": "2025-06-26T22-36-56.177Z_recording_1750977413792.m4a",
+    "text": "Hallo, mein Name ist Ed Keir.",
+    "original": "Hola, mi nombre es Ed Keir.",
+    "translated": true,
+    "targetLanguage": "de",
+    "timestamp": "2025-06-26T22:36:56.178Z"
+  },
+  {
+    "file": "2025-06-27T15-15-56.403Z_recording_1751037354335.m4a",
+    "text": "Κάθα.",
+    "original": "Κάθα.",
+    "translated": false,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-27T15:15:56.406Z"
+  },
+  {
+    "file": "2025-06-27T15-16-09.387Z_recording_1751037367833.m4a",
+    "text": "Casa. No. Es otra cosa. Ya.",
+    "original": "Casa. No. Es otra cosa. Ya.",
+    "translated": false,
+    "targetLanguage": "en",
+    "timestamp": "2025-06-27T15:16:09.387Z"
+  },
+  {
+    "file": "2025-06-27T15-16-31.401Z_recording_1751037387329.m4a",
+    "text": "Hallo Uriel, wie geht es dir? Schöner Tag.",
+    "original": "Hola Uriel, ¿cómo estás? Bonito día.",
+    "translated": true,
+    "targetLanguage": "de",
+    "timestamp": "2025-06-27T15:16:31.401Z"
+  },
+  {
+    "file": "2025-06-27T15-23-32.495Z_recording_1751037808291.m4a",
+    "text": "Hola, Daphne. ¿Cómo estás? Yo estoy muy bien.",
+    "original": "Hallo, Daphne. Wie geht es dir? Ich bin sehr gut.",
+    "translated": true,
+    "targetLanguage": "es",
+    "timestamp": "2025-06-27T15:23:32.495Z"
   }
 ]

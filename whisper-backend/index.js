@@ -15,7 +15,7 @@ function convertToWav(inputPath, outputPath) {
     execSync(`ffmpeg -i "${inputPath}" -ar 16000 -ac 1 -f wav "${outputPath}"`);
     console.log('🎙 Conversión exitosa a WAV');
   } catch (error) {
-    console.error('rror al convertir a WAV:', error);
+    console.error('Error al convertir a WAV:', error);
     throw error;
   }
 }
@@ -24,7 +24,7 @@ function convertToWav(inputPath, outputPath) {
 
 // Api
 const openai = new OpenAI({
-  apiKey: 'holas_AQUI PON LA API',
+  apiKey: '',
 });
 
 app.use(cors());
@@ -36,39 +36,64 @@ const upload = multer({ dest: 'uploads/' });
 // Ruta principal para transcripción
 app.post('/transcribe', upload.single('audio'), async (req, res) => {
   try {
-    const tempPath = req.file.path;                   // Ej: uploads/abc123
-    const originalName = req.file.originalname;       // Ej: audio.m4a
-    const extension = path.extname(originalName) || '.m4a'; // en caso de que venga sin extensión
-    const correctPath = tempPath + extension;         // Ej: uploads/abc123.m4a
+    const shouldTranslate = req.query.translate === 'true';
+    const targetLanguage = req.query.targetLanguage || 'en'; // idioma destino
 
-    // Renombrar archivo con extensión reconocida
+    const tempPath = req.file.path;
+    const originalName = req.file.originalname;
+    const extension = path.extname(originalName) || '.m4a';
+    const correctPath = tempPath + extension;
     fs.renameSync(tempPath, correctPath);
 
-    // Enviar a OpenAI
     const wavPath = correctPath.replace(extension, '.wav');
     convertToWav(correctPath, wavPath);
 
+    // Paso 1: Transcripción con Whisper
     const transcription = await openai.audio.transcriptions.create({
       file: fs.createReadStream(wavPath),
       model: 'whisper-1',
       response_format: 'json',
     });
 
+    const originalText = transcription.text;
+    const detectedLanguage = transcription.language;
 
-    const text = transcription.text;
-    console.log('Texto transcrito:', text);
+    let finalText = originalText;
 
-    // Guardar audio renombrado
+    // Paso 2: Si se solicitó traducción
+    if (shouldTranslate) {
+      const gptResponse = await openai.chat.completions.create({
+        model: 'gpt-4', // o 'gpt-3.5-turbo'
+        messages: [
+          {
+            role: 'system',
+            content: `Traduce el siguiente texto del idioma ${detectedLanguage} al idioma ${targetLanguage}.`,
+          },
+          {
+            role: 'user',
+            content: originalText,
+          },
+        ],
+      });
+
+      finalText = gptResponse.choices[0].message.content;
+    }
+
+    console.log('Texto final:', finalText);
+
+    // Guardar audio y transcripción
     const timestamp = new Date().toISOString().replace(/:/g, '-');
     const newFileName = `${timestamp}_${originalName}`;
     const finalPath = path.join(__dirname, 'audios', newFileName);
+    fs.copyFileSync(correctPath, finalPath);
 
-    fs.copyFileSync(correctPath, finalPath); // copia el archivo a /audios
-
-    // Guardar transcripción en archivo JSON
     const logEntry = {
       file: newFileName,
-      text,
+      text: finalText,
+      original: originalText,
+      language: detectedLanguage,
+      translated: shouldTranslate,
+      targetLanguage,
       timestamp: new Date().toISOString(),
     };
 
@@ -80,12 +105,23 @@ app.post('/transcribe', upload.single('audio'), async (req, res) => {
     history.push(logEntry);
     fs.writeFileSync(historyFile, JSON.stringify(history, null, 2));
 
-    res.json({ text });
+    // Respuesta al frontend
+    if (shouldTranslate) {
+      res.json({
+        text: finalText,
+        original: originalText,
+        language: detectedLanguage,
+      });
+    } else {
+      res.json({ text: originalText });
+    }
+
   } catch (err) {
-    console.error('Error en transcripción:', err);
-    res.status(500).json({ error: 'Error al transcribir audio' });
+    console.error('Error en transcripción/traducción:', err);
+    res.status(500).json({ error: 'Error al procesar el audio' });
   }
 });
+
 
 // Crear carpeta si no existe
 if (!fs.existsSync('audios')) {

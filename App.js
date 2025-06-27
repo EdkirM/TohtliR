@@ -15,7 +15,7 @@ export default function App() {
       <Drawer.Navigator initialRouteName="Inicio">
         <Drawer.Screen name="Inicio" component={HomeScreen} />
         <Drawer.Screen name="Ajustes" component={SettingsScreen} />
-        <Drawer.Screen name="Grabar" component={RecordScreen}/>
+        <Drawer.Screen name="Historial" component={RecordScreen}/>
       </Drawer.Navigator>
     </NavigationContainer>
   );
